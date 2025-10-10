@@ -1,21 +1,13 @@
 ---
-import Logo from '../components/Logo.astro';
-
 const navItems = [
     { linkText: 'Home', href: '/' },
     { linkText: 'Work', href: '/work' },
-    { linkText: 'Blog', href: '/blog' },
-    { linkText: 'Revalidation', href: '/revalidation' },
-    { linkText: 'Image CDN', href: '/image-cdn' },
-    { linkText: 'Edge Function', href: '/edge' },
-    { linkText: 'Blobs', href: '/blobs' }
+    { linkText: 'Blog', href: '/blog' }
 ];
 ---
 
 <nav class="flex flex-wrap items-center gap-4 pt-6 pb-16 sm:pt-12 sm:pb-24">
-    <a href="/">
-        <Logo />
-    </a>
+    <a href="/"> Logo </a>
     {
         !!navItems?.length && (
             <ul class="flex flex-wrap gap-x-4 gap-y-1">
