@@ -1,8 +1,4 @@
-# Astro on Netlify Platform Starter
-
-[Live Demo](https://astro-platform-starter.netlify.app/)
-
-A modern starter based on Astro.js, Tailwind, and [Netlify Core Primitives](https://docs.netlify.com/core/overview/#develop) (Edge Functions, Image CDN, Blob Store).
+# Portfolio sit based on Astro
 
 ## Astro Commands
 
@@ -30,7 +26,7 @@ All commands are run from the root of the project, from a terminal:
 
 1. Clone this repository, then run `npm install` in its root directory.
 
-2. For the starter to have full functionality locally (e.g. edge functions, blob store), please ensure you have an up-to-date version of Netlify CLI. Run:
+2. For the starter to have full functionality locally, please ensure you have an up-to-date version of Netlify CLI. Run:
 
 ```
 npm install netlify-cli@latest -g
