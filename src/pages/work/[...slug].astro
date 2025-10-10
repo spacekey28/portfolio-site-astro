@@ -1,0 +1,39 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+    const items = await getCollection('portfolio');
+    return items.map((item) => ({ params: { slug: item.slug } }));
+}
+
+const { slug } = Astro.params;
+const item = (await getCollection('portfolio')).find((p) => p.slug === slug) as CollectionEntry<'portfolio'>;
+if (!item) {
+    throw new Error('Case study not found');
+}
+const { title, summary, cover, date, tags } = item.data;
+const { Content } = await item.render();
+---
+
+<Layout title={title}>
+    <article class="prose prose-invert mx-auto max-w-3xl px-4 py-10">
+        <header class="mb-6">
+            <h1 class="mb-2">{title}</h1>
+            <p class="text-sm opacity-80">{new Date(date).toLocaleDateString()}</p>
+            <p class="opacity-80">{summary}</p>
+        </header>
+        {cover && <img src={cover} alt={title} loading="lazy" class="rounded-xl" />}
+        <Content />
+        {
+            tags?.length ? (
+                <ul class="mt-8 flex flex-wrap gap-2 text-xs">
+                    {tags.map((t) => (
+                        <li class="px-2 py-1 rounded-full bg-white/10">#{t}</li>
+                    ))}
+                </ul>
+            ) : null
+        }
+    </article>
+</Layout>
