@@ -1,0 +1,14 @@
+{
+    "name": "Peter Son",
+    "role": "Front-end Web Developer",
+    "links": [
+        {
+            "label": "Website",
+            "url": "https://peteson.me"
+        },
+        {
+            "label": "GitHub",
+            "url": "https://github.com/spacekey28/portfolio-site-astro"
+        }
+    ]
+}
