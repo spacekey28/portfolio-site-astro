@@ -22,7 +22,3 @@ pnpm-debug.log*
 
 # Local Netlify folder
 .netlify
-
-# .cursor rules
-.cursorrules
-.cursor/

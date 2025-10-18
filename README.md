@@ -1,4 +1,4 @@
-# Portfolio sit based on Astro
+# Portfolio site based on Astro
 
 ## Astro Commands
 
