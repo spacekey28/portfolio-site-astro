@@ -1,22 +1,36 @@
 @import 'tailwindcss';
 
 @theme {
-    --font-sans: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --color-primary: #f67280;
-    --color-primary-content: #101828;
+    --font-sans: 'Karla', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-heading: 'Lato', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --color-navy: #2C405A;
+    --color-sky: #66CCFF;
+    --color-primary: #66CCFF;
+    --color-primary-content: #2C405A;
 }
 
 @layer base {
     h1 {
-        @apply text-4xl font-bold tracking-tight sm:text-5xl;
+        @apply text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl;
+        font-family: var(--font-heading);
     }
 
     h2 {
-        @apply text-2xl font-bold sm:text-3xl;
+        @apply text-2xl font-bold sm:text-3xl lg:text-4xl;
+        font-family: var(--font-heading);
+    }
+
+    h3 {
+        @apply text-xl font-semibold sm:text-2xl;
+        font-family: var(--font-heading);
+    }
+
+    body {
+        font-family: var(--font-sans);
     }
 
     a:not(.btn) {
-        @apply underline transition hover:opacity-80;
+        @apply transition hover:opacity-80;
     }
 
     pre {
@@ -24,7 +38,7 @@
     }
 
     :not(pre) > code {
-        @apply px-1 py-0.5 font-mono rounded bg-gray-900 text-primary;
+        @apply px-1 py-0.5 font-mono rounded bg-gray-900 text-sky;
         font-size: 0.9em;
     }
 }
@@ -49,23 +63,43 @@
     }
 
     .btn {
-        @apply inline-flex items-center justify-center gap-2 bg-primary text-primary-content cursor-pointer text-center font-semibold no-underline transition-colors;
+        @apply inline-flex items-center justify-center gap-2 cursor-pointer text-center font-semibold no-underline transition-all duration-200;
         padding: var(--btn-py, 0.875rem) var(--btn-px, 1.25rem);
         font-size: var(--btn-font-size, 0.875rem);
-        border-radius: var(--btn-border-radius, 0.25rem);
-
-        &:hover {
-            @apply bg-primary/85;
-        }
+        border-radius: var(--btn-border-radius, 0.375rem);
+        font-family: var(--font-heading);
 
         &:disabled {
             @apply text-gray-400 bg-gray-700;
         }
     }
 
+    .btn-primary {
+        @apply bg-sky text-white;
+        
+        &:hover {
+            @apply bg-sky/90;
+        }
+    }
+
+    .btn-secondary {
+        @apply bg-transparent text-navy border-2 border-navy;
+        
+        &:hover {
+            @apply bg-navy text-white;
+        }
+    }
+
     .btn-lg {
         --btn-font-size: 1.125rem;
-        --btn-px: 1.5rem;
-        --btn-py: 1.125rem;
+        --btn-px: 2rem;
+        --btn-py: 1rem;
+    }
+
+    .line-clamp-3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 }
