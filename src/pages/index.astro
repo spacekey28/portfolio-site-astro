@@ -1,13 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Markdown from '../components/Markdown.astro';
-
-const explainer = `
-This site was built with Astro.js.
-`;
+import HeroSection from '../components/HeroSection.tsx';
+import AboutSection from '../components/AboutSection.tsx';
 ---
 
-<Layout title="Peter Son's Portfoilo | Front End Developer in Auckland, NZ">
-    <h1 class="mb-10">Front-end Web Developer & Mobile App Lover</h1>
-    <Markdown content={explainer} class="mb-10 text-lg" />
+<Layout
+    title="Peter Son's Portfolio | Front End Developer in Auckland, NZ"
+    description="Front-end web developer based in Auckland, New Zealand. Specializing in React, TypeScript, and modern web technologies."
+>
+    <HeroSection />
+    <AboutSection />
 </Layout>
