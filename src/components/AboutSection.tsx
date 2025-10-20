@@ -10,7 +10,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ className = '' }) => {
     return (
         <section className={`py-12 sm:py-14 lg:py-16 ${className}`}>
             <div className="max-w-6xl mx-auto px-6 sm:px-8">
-                <div className="flex flex-col lg:flex-row lg:items-center gap-12 lg:gap-16">
+                <div className="flex flex-col lg:flex-row lg:items-start gap-12 lg:gap-16">
                     {/* Avatar */}
                     <div className="flex-shrink-0 lg:w-1/3 flex justify-center lg:justify-end">
                         <Avatar size="xxl" />
