@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { formatDate } from '../../utils';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 
@@ -27,9 +28,9 @@ const next = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : n
     <article class="prose prose-invert mx-auto max-w-3xl px-4 py-10">
         <header class="mb-6">
             <h1 class="mb-2">{title}</h1>
-            <p class="text-sm opacity-80">{pubDate.toLocaleDateString()}</p>
+            <p class="text-sm opacity-80">{formatDate(pubDate)}</p>
         </header>
-        {cover && <img src={cover} alt={title} loading="lazy" class="rounded-lg" />}
+        {cover && <img src={cover} alt={title} loading="lazy" class="rounded-lg mb-6" />}
         <Content />
         {
             tags?.length ? (
