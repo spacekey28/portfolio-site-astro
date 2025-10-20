@@ -15,7 +15,7 @@ const blog = defineCollection({
         updatedDate: z.date().optional(),
         cover: z.string().optional(),
         tags: z.array(z.string()).default([]),
-        category: z.enum(['engineering', 'design', 'notes', 'news']).default('notes'),
+        category: z.enum(['web', 'app', 'notes', 'news']).default('notes'),
         draft: z.boolean().default(false),
         authors: z.array(reference('authors')).default([]),
         seo: seo.optional()

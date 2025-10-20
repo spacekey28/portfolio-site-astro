@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { formatDate } from '../../utils';
 import { getCollection } from 'astro:content';
 
 const items = (await getCollection('portfolio')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
@@ -9,9 +10,9 @@ const items = (await getCollection('portfolio')).sort((a, b) => b.data.date.getT
     <main class="py-16 sm:py-24 lg:py-32">
         <div class="max-w-6xl mx-auto px-6 sm:px-8">
             <div class="text-center mb-16">
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-navy mb-6">My Work</h1>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-navy mb-6">Recent Work</h1>
                 <p class="text-lg sm:text-xl text-navy max-w-2xl mx-auto">
-                    A collection of projects that showcase my skills in front-end development, user experience design, and modern web technologies.
+                    A curated set of projects delivered recently — from performance‑focused front‑end builds to clean, accessible UI work.
                 </p>
             </div>
 
@@ -21,7 +22,7 @@ const items = (await getCollection('portfolio')).sort((a, b) => b.data.date.getT
                         <li class="group">
                             <a
                                 href={`/work/${slug}/`}
-                                class="block bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden"
+                                class="block bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden"
                             >
                                 {data.cover && (
                                     <div class="aspect-video overflow-hidden">
@@ -37,7 +38,7 @@ const items = (await getCollection('portfolio')).sort((a, b) => b.data.date.getT
                                     <h2 class="text-xl font-semibold text-navy mb-3 group-hover:text-sky transition-colors duration-200">{data.title}</h2>
                                     <p class="text-gray-600 text-sm mb-4 line-clamp-3">{data.summary}</p>
                                     <div class="flex items-center justify-between">
-                                        <p class="text-xs text-gray-500">{new Date(data.date).toLocaleDateString()}</p>
+                                        <p class="text-xs text-gray-500">{formatDate(data.date)}</p>
                                         {data.tags && data.tags.length > 0 && (
                                             <div class="flex flex-wrap gap-1">
                                                 {data.tags.slice(0, 2).map((tag) => (

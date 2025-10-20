@@ -24,7 +24,7 @@ const { Content } = await item.render();
             <p class="text-sm opacity-80">{new Date(date).toLocaleDateString()}</p>
             <p class="opacity-80">{summary}</p>
         </header>
-        {cover && <img src={cover} alt={title} loading="lazy" class="rounded-xl" />}
+        {cover && <img src={cover} alt={title} loading="lazy" class="rounded-lg" />}
         <Content />
         {
             tags?.length ? (

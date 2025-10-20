@@ -103,3 +103,7 @@
         overflow: hidden;
     }
 }
+
+ol {
+    @apply list-decimal pl-4;
+}

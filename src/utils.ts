@@ -31,3 +31,12 @@ export function cacheHeaders(maxAgeDays = 365, cacheTags?: string[]): Record<str
 }
 
 export const uploadDisabled = import.meta.env.PUBLIC_DISABLE_UPLOADS?.toLowerCase() === 'true';
+
+// Format a Date into dd/MM/YYYY for consistent display across the site
+export function formatDate(date: Date | string | number): string {
+    const d = new Date(date);
+    const dd = String(d.getDate()).padStart(2, '0');
+    const mm = String(d.getMonth() + 1).padStart(2, '0');
+    const yyyy = d.getFullYear();
+    return `${dd}/${mm}/${yyyy}`;
+}

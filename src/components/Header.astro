@@ -9,18 +9,18 @@ const navItems = [
 ];
 ---
 
-<header class="bg-white">
-    <nav class="max-w-6xl mx-auto px-6 sm:px-8 pt-6 pb-16 sm:pt-12 sm:pb-24">
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-6">
         <div class="flex items-center justify-between lg:flex-row lg:items-start lg:justify-between gap-6">
             {/* Logo */}
             <div class="flex-shrink-0">
                 <a href="/" class="inline-block">
-                    <Logo variant="dark" className="w-8 h-8" />
+                    <Logo variant="dark" className="w-20 h-14" />
                 </a>
             </div>
 
             {/* Desktop Navigation */}
-            <div class="hidden lg:flex lg:items-center lg:gap-8">
+            <div class="hidden lg:flex lg:items-center lg:gap-8 self-stretch">
                 <ul class="flex gap-x-6">
                     {
                         navItems.map((item) => (
