@@ -5,7 +5,7 @@ date: 2025-10-22
 client: "Mighty Campers"
 role: "Front-end Developer"
 website: "https://www.mightycampers.com"
-cover: "/src/assets/work/mightycampers.jpg"
+cover: "/images/work/mightycampers.jpg"
 gallery: []
 tags: ["React", "Next.js", "Typescript", "GraphQL", "Kentico"]
 seo:

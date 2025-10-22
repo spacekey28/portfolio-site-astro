@@ -5,7 +5,7 @@ date: 2025-10-23
 client: "Winnebago"
 role: "Front-end Developer"
 website: "https://www.gowinnebago.com.au"
-cover: "/src/assets/work/winnebago.jpg"
+cover: "/images/work/winnebago.jpg"
 gallery: []
 tags: ["React", "Next.js", "Typescript", "GraphQL", "Kentico"]
 seo:

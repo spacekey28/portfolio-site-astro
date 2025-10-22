@@ -3,7 +3,7 @@ title: "When to redesign your website"
 description: "Rebranding is necessary for your business"
 pubDate: 2021-07-06
 updatedDate: 2025-10-21
-cover: "/src/assets/blog/when-to-redesign-your-website.jpg"
+cover: "/images/blog/when-to-redesign-your-website.jpg"
 tags: ["branding", "responsive"]
 category: "web"
 draft: false

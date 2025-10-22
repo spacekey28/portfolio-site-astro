@@ -3,7 +3,7 @@ title: "How to make a time management plan to increase productivity"
 description: "You have no chance to do your best work – in fact, you can produce your worst."
 pubDate: 2020-07-16
 updatedDate: 2025-10-21
-cover: "/src/assets/blog/how-to-make-a-time-management-plan.jpg"
+cover: "/images/blog/how-to-make-a-time-management-plan.jpg"
 tags: ["plan", "tips"]
 category: "notes"
 draft: false

@@ -5,7 +5,7 @@ date: 2025-10-21
 client: "Camperagent RV Super centre"
 role: "Front-end Developer"
 website: "https://camperagent.com.au"
-cover: "/src/assets/work/camperagent.jpg"
+cover: "/images/work/camperagent.jpg"
 gallery: []
 tags: ["React", "Next.js", "Typescript", "GraphQL", "Kentico"]
 seo:

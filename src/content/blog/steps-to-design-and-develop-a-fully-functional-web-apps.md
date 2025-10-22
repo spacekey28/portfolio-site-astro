@@ -3,7 +3,7 @@ title: "Steps to design and develop a fully functional web apps"
 description: "5 steps - Define, Plan, Sketch, Design & Develop, and Optimise"
 pubDate: 2020-08-13
 updatedDate: 2025-10-21
-cover: "/src/assets/blog/steps-to-design-and-develop.jpg"
+cover: "/images/blog/steps-to-design-and-develop.jpg"
 tags: ["design", "development"]
 category: "app"
 draft: false
