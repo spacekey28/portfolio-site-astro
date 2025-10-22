@@ -14,7 +14,8 @@ import Layout from '../layouts/Layout.astro';
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
                 action="/contact/success"
-                class="bg-white p-8 rounded-lg shadow-lg text-left space-y-6"
+                class="bg-white p-8 rounded-md shadow-lg text-left space-y-6"
+                id="contact-form"
             >
                 <input type="hidden" name="form-name" value="contact" />
                 <p class="hidden">
@@ -22,40 +23,45 @@ import Layout from '../layouts/Layout.astro';
                 </p>
 
                 <div>
-                    <label for="name" class="block text-navy text-lg font-medium mb-2">Name</label>
+                    <label for="name" class="block text-navy text-lg font-medium mb-2">Name *</label>
                     <input
                         type="text"
                         id="name"
                         name="name"
                         required
-                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky focus:border-transparent transition-all duration-200 text-navy"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-sky focus:border-transparent transition-all duration-200 text-navy"
+                        placeholder="Your full name"
                     />
                 </div>
 
                 <div>
-                    <label for="email" class="block text-navy text-lg font-medium mb-2">Email</label>
+                    <label for="email" class="block text-navy text-lg font-medium mb-2">Email *</label>
                     <input
                         type="email"
                         id="email"
                         name="email"
                         required
-                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky focus:border-transparent transition-all duration-200 text-navy"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-sky focus:border-transparent transition-all duration-200 text-navy"
+                        placeholder="your.email@example.com"
                     />
                 </div>
 
                 <div>
-                    <label for="message" class="block text-navy text-lg font-medium mb-2">Message</label>
+                    <label for="message" class="block text-navy text-lg font-medium mb-2">Message *</label>
                     <textarea
                         id="message"
                         name="message"
                         rows="6"
                         required
-                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky focus:border-transparent transition-all duration-200 text-navy"
-                    ></textarea>
+                        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-sky focus:border-transparent transition-all duration-200 text-navy"
+                        placeholder="Tell me about your project or just say hello..."></textarea>
                 </div>
 
                 <div class="text-center">
-                    <button type="submit" class="btn btn-primary btn-lg"> Send Message </button>
+                    <button type="submit" class="btn btn-primary btn-lg" id="submit-btn">
+                        <span class="submit-text">Send Message</span>
+                        <span class="loading-text hidden">Sending...</span>
+                    </button>
                 </div>
             </form>
 
@@ -64,4 +70,38 @@ import Layout from '../layouts/Layout.astro';
             </p>
         </div>
     </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('contact-form');
+            const submitBtn = document.getElementById('submit-btn');
+            const submitText = submitBtn.querySelector('.submit-text');
+            const loadingText = submitBtn.querySelector('.loading-text');
+
+            form.addEventListener('submit', function (e) {
+                // Show loading state
+                submitText.classList.add('hidden');
+                loadingText.classList.remove('hidden');
+                (submitBtn as HTMLButtonElement).disabled = true;
+                submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+
+                // The form will submit normally to Netlify
+                // Netlify will handle the submission and redirect to success page
+            });
+
+            // Add real-time validation feedback
+            const inputs = form.querySelectorAll('input[required], textarea[required]');
+            inputs.forEach((input) => {
+                input.addEventListener('blur', function () {
+                    if (this.checkValidity()) {
+                        this.classList.remove('border-red-300');
+                        this.classList.add('border-green-300');
+                    } else {
+                        this.classList.remove('border-green-300');
+                        this.classList.add('border-red-300');
+                    }
+                });
+            });
+        });
+    </script>
 </Layout>

@@ -69,7 +69,7 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ variant = 'dark', className =
                 <a
                     key={link.name}
                     href={link.href}
-                    className="p-2 rounded-lg transition-colors duration-200 hover:bg-opacity-10"
+                    className="p-2 rounded-md transition-colors duration-200 hover:bg-opacity-10"
                     style={{
                         color: iconColor,
                         backgroundColor: 'transparent'

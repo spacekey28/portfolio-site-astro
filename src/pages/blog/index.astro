@@ -21,7 +21,7 @@ const posts = allPosts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.
                 {
                     posts.map(({ slug, data }) => (
                         <li class="group">
-                            <article class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 p-8">
+                            <article class="bg-white rounded-md shadow-lg hover:shadow-xl transition-all duration-300 p-8">
                                 <a href={`/blog/${slug}/`} class="block">
                                     <div class="flex flex-col lg:flex-row lg:items-start gap-6">
                                         {data.cover && (
@@ -30,7 +30,7 @@ const posts = allPosts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.
                                                     src={data.cover}
                                                     alt={data.title}
                                                     loading="lazy"
-                                                    class="w-full h-32 lg:h-24 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300"
+                                                    class="w-full h-32 lg:h-24 object-cover rounded-md group-hover:scale-105 transition-transform duration-300"
                                                 />
                                             </div>
                                         )}
