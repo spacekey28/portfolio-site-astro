@@ -41,6 +41,7 @@ const portfolio = defineCollection({
         date: z.date(),
         client: z.string().optional(),
         role: z.string().optional(),
+        website: z.string().url().optional(),
         cover: z.string().optional(),
         gallery: z.array(z.string()).default([]),
         tags: z.array(z.string()).default([]),
