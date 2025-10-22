@@ -1,0 +1,26 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Message Sent | Peter Son" description="Thank you for your message. I'll get back to you soon!">
+    <main class="py-16 sm:py-24 lg:py-32">
+        <div class="max-w-3xl mx-auto px-6 sm:px-8 text-center">
+            <div class="bg-white p-8 sm:p-12 rounded-md shadow-lg">
+                <div class="mb-8">
+                    <div class="w-16 h-16 bg-sky/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-sky" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl font-bold text-navy mb-4">Message Sent!</h1>
+                    <p class="text-lg text-gray-600 mb-8">Thanks for your message. I’ll get back to you as soon as I can.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <a href="/" class="btn btn-primary btn-lg inline-block"> Back to Home </a>
+                    <a href="/work" class="btn btn-secondary btn-lg inline-block ml-4"> View My Work </a>
+                </div>
+            </div>
+        </div>
+    </main>
+</Layout>
