@@ -1,2 +1,8 @@
 User-agent: *
-Disallow: /
+Allow: /
+
+# Sitemap
+Sitemap: /sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1

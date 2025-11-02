@@ -21,13 +21,17 @@ const Avatar: React.FC<AvatarProps> = ({
         xxl: 'w-48 h-48'
     };
 
+    // Apply fetchpriority="high" and remove lazy loading for peterson-avatar.png
+    // This is a critical above-the-fold image that should load immediately
+    const isDefaultAvatar = src === '/images/peterson-avatar.png';
+
     return (
         <div className={`${sizeClasses[size]} ${className}`}>
             <img
                 src={src}
                 alt={alt}
                 className="w-full h-full object-cover"
-                loading="lazy"
+                {...(isDefaultAvatar ? { fetchPriority: 'high' as const } : { loading: 'lazy' })}
             />
         </div>
     );
