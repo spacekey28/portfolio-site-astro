@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="404 - Page Not Found | Peter Son" description="The page you're looking for doesn't exist. Return to the homepage or explore my work and blog.">
+    <main class="py-16 sm:py-24 lg:py-32 min-h-[60vh] flex items-center">
+        <div class="max-w-3xl mx-auto px-6 sm:px-8 text-center">
+            {/* 404 Visual */}
+            <div class="mb-8">
+                <h1 class="text-8xl sm:text-9xl lg:text-[12rem] font-bold text-navy/20 mb-4 leading-none">404</h1>
+            </div>
+
+            {/* Error Message */}
+            <div class="mb-12">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy mb-4">Page Not Found</h2>
+                <p class="text-lg sm:text-xl text-navy/80 max-w-2xl mx-auto leading-relaxed">
+                    Oops! The page you're looking for doesn't exist. It might have been moved, deleted, or you may have entered the wrong URL.
+                </p>
+            </div>
+
+            {/* Action Buttons */}
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                <a href="/" class="btn btn-primary btn-lg">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                        ></path>
+                    </svg>
+                    Go Home
+                </a>
+                <a href="/work" class="btn btn-secondary btn-lg">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        ></path>
+                    </svg>
+                    View Work
+                </a>
+            </div>
+
+            {/* Quick Links */}
+            <div class="border-t border-gray-200 pt-8">
+                <p class="text-sm text-navy/60 mb-4">You might be looking for:</p>
+                <nav aria-label="Quick navigation links">
+                    <ul class="flex flex-wrap gap-4 justify-center text-sm">
+                        <li>
+                            <a href="/" class="text-sky hover:text-navy hover:underline transition-colors duration-200"> Home </a>
+                        </li>
+                        <li>
+                            <a href="/work" class="text-sky hover:text-navy hover:underline transition-colors duration-200"> Work </a>
+                        </li>
+                        <li>
+                            <a href="/blog" class="text-sky hover:text-navy hover:underline transition-colors duration-200"> Blog </a>
+                        </li>
+                        <li>
+                            <a href="/contact" class="text-sky hover:text-navy hover:underline transition-colors duration-200"> Contact </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </main>
+</Layout>
