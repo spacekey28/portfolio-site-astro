@@ -31,7 +31,7 @@ const Avatar: React.FC<AvatarProps> = ({
                 src={src}
                 alt={alt}
                 className="w-full h-full object-cover"
-                {...(isDefaultAvatar ? { fetchPriority: 'high' as const } : { loading: 'lazy' })}
+                {...(isDefaultAvatar ? { fetchpriority: 'high' } : { loading: 'lazy' })}
             />
         </div>
     );
