@@ -22,7 +22,7 @@ const { title, description } = Astro.props;
         <meta property="og:title" content={title} />
         {description && <meta property="og:description" content={description} />}
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={new URL('/images/peterson-avatar.png', Astro.site ?? Astro.url).toString()} />
+        <meta property="og:image" content={new URL('/images/sonpeterdotcom-og.jpg', Astro.site ?? Astro.url).toString()} />
         <meta name="generator" content={Astro.generator} />
         <link rel="icon" type="image/png" href="/favicon.png" />
 
