@@ -1,2 +1,3 @@
-# SPA fallback for client-side routing
-/* /index.html 200
+# Static site - no catch-all redirect needed
+# All routes are pre-rendered at build time
+# Netlify will automatically serve 404.html for missing pages

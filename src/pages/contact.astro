@@ -11,8 +11,8 @@ import Layout from '../layouts/Layout.astro';
             <form
                 name="contact"
                 method="POST"
-                netlify
-                netlify-honeypot="bot-field"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
                 action="/contact?success=true"
                 class="bg-white p-8 rounded-md shadow-lg text-left space-y-6"
                 id="contact-form"
