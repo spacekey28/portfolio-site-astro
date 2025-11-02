@@ -11,9 +11,9 @@ import Layout from '../layouts/Layout.astro';
             <form
                 name="contact"
                 method="POST"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-                action="/contact/success"
+                netlify
+                netlify-honeypot="bot-field"
+                action="/contact?success=true"
                 class="bg-white p-8 rounded-md shadow-lg text-left space-y-6"
                 id="contact-form"
             >
@@ -104,7 +104,7 @@ import Layout from '../layouts/Layout.astro';
                 submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
 
                 // The form will submit normally to Netlify
-                // Netlify will handle the submission and redirect back with ?success=true
+                // Netlify will process the submission and redirect based on configuration
             });
 
             // Add real-time validation feedback
