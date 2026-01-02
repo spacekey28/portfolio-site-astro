@@ -10,29 +10,33 @@ draft: false
 authors: ['peter-son']
 seo:
   title: 'How I think about maintainable CSS'
-  description: 'Learn how I approach maintainable CSS — reusable components, clear naming, design systems, and performance — so your website stays fast, consistent, and easier to update over time.'
+  description: 'Learn how I approach maintainable CSS so your website stays fast, consistent, and easier to update over time.'
 ---
 
 Most websites start clean — and slowly turn messy.
 
 New pages, rushed deadlines, different developers… and suddenly:
 
+<br>
+
 - buttons don’t match
 - spacing feels random
 - changing one style breaks three others
 
+<br>
 That’s why I care so much about maintainable CSS.
 
 It keeps sites fast, consistent, and cheaper to update long-term.
 <br><br>
 
 **My goal: CSS that still makes sense months later**
-
+<br>
 I always ask:
-
+<br><br>
 “Will the next developer understand this?”
-
+<br>
 Good CSS should be:
+<br><br>
 
 - predictable
 - reusable
@@ -51,14 +55,15 @@ Good CSS should be:
 **Sketch your ideas**
 
 Before styling everything, I define:
+<br><br>
 
 - colors
 - spacing scale
 - typography
 - buttons and cards
 - breakpoints
-
-Then I use tokens instead of random values:
+  <br><br>
+  Then I use tokens instead of random values:
 
 ```CSS
 color: var(--brand-primary);
@@ -71,13 +76,14 @@ Result: consistency — and one place to update things later.
 **2) Build reusable components (not one-off styles)**
 
 Instead of styling every page from scratch, I create:
+<br><br>
 
 - shared buttons
 - cards
 - form elements
-
-That means new features ship faster and stay on-brand.
-<br><br>
+  <br><br>
+  That means new features ship faster and stay on-brand.
+  <br><br>
 
 **3) Name things by purpose — not appearance**
 
@@ -117,32 +123,34 @@ Small, local stylesheets = fewer surprises.
 **6) Performance matters**
 
 I regularly prune:
+<br><br>
 
 - unused CSS
 - duplicated styles
 - heavy frameworks we don’t need
-
-Lean CSS = faster pages, better SEO, happier users.
-<br><br>
+  <br><br>
+  Lean CSS = faster pages, better SEO, happier users.
+  <br><br>
 
 **Why clients should care**
 
 Maintainable CSS means:
-
-💰 cheaper future changes
-🎯 consistent branding
-⚡ faster load times
-📈 more trust (and conversions)
-
+<br><br>
+💰 cheaper future changes<br>
+🎯 consistent branding<br>
+⚡ faster load times<br>
+📈 more trust (and conversions)<br>
+<br>
 Messy CSS might be faster to ship — but it costs more later.
 <br><br>
 
 **If you want a site that grows without breaking**
 
 I help businesses build front-ends that are:
+<br><br>
 
 - clean
 - scalable
 - easy to maintain
-
-Whether you’re redesigning, adding features, or cleaning up legacy CSS — I’d love to help.
+  <br><br>
+  Whether you’re redesigning, adding features, or cleaning up legacy CSS — I’d love to help.
