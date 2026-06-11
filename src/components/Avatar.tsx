@@ -8,7 +8,7 @@ interface AvatarProps {
 }
 
 const Avatar: React.FC<AvatarProps> = ({
-    src = '/images/peterson-avatar.png',
+    src = '/images/peterson-avatar-2.png',
     alt = 'Peter Son Avatar',
     size = 'lg',
     className = ''
