@@ -39,7 +39,7 @@ const items = (await getCollection('portfolio')).sort((a, b) => b.data.date.getT
                                     <div class="flex items-center justify-between">
                                         {data.tags && data.tags.length > 0 && (
                                             <div class="flex flex-wrap gap-1">
-                                                {data.tags.slice(0, 2).map((tag) => (
+                                                {data.tags.slice(0, 5).map((tag) => (
                                                     <span class="px-2 py-1 bg-sky/10 text-sky text-xs rounded-full">{tag}</span>
                                                 ))}
                                             </div>
