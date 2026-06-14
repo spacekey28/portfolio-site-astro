@@ -36,7 +36,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ className = '' }) => {
                             </p>
 
                             <p>
-                                My current languages/toolsets are <strong>HTML, CSS, SASS, JavaScript, TypeScript, Next.js, React, Astro, Tailwind CSS, Bootstrap CSS, Handlebars, Keystone, MongoDB, Grunt, Gulp, Node.js, Git, Vite, and modern web development tools</strong>.
+                                My current languages/toolsets are <strong>HTML, CSS, SASS, JavaScript, TypeScript, Next.js, React, Astro, Tailwind CSS, shadcn/ui, DaisyUI, Bootstrap CSS, Handlebars, Keystone, Sanity, MongoDB, Grunt, Gulp, Node.js, Git, Vite, and modern web development tools</strong>.
                             </p>
                         </div>
 
