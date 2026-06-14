@@ -15,7 +15,9 @@ if (!post) {
     throw new Error('Post not found');
 }
 const { Content } = await post.render();
-const { title, description, cover, pubDate, tags } = post.data;
+const { title, description, cover, pubDate, tags, seo } = post.data;
+const pageTitle = seo?.title ?? title;
+const pageDescription = seo?.description ?? description;
 const allPosts = (await getCollection('blog', ({ data }) => import.meta.env.DEV || !data.draft)).sort(
     (a, b) => a.data.pubDate.getTime() - b.data.pubDate.getTime()
 );
@@ -24,7 +26,7 @@ const previous = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
 const next = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
 ---
 
-<Layout title={title} description={description}>
+<Layout title={pageTitle} description={pageDescription}>
     <article class="prose prose-invert mx-auto max-w-3xl px-4 py-10">
         <header class="mb-6">
             <h1 class="mb-2">{title}</h1>
