@@ -12,7 +12,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className = '' }) => {
                     Peter Son
                 </h1>
                 <p className="text-xl text-navy mb-12 font-normal">
-                    Front-end Web Developer & Mobile App Lover
+                    Frontend Developer<br />
+                    Crafting modern, fast and maintainable web experiences.
                 </p>
                 <a
                     href="/work"
