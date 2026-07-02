@@ -1,20 +1,19 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
-import type { CollectionEntry } from 'astro:content';
+import { getCollection, getEntry, render } from 'astro:content';
 
 export async function getStaticPaths() {
     const items = await getCollection('portfolio');
-    return items.map((item) => ({ params: { slug: item.slug } }));
+    return items.map((item) => ({ params: { slug: item.id } }));
 }
 
 const { slug } = Astro.params;
-const item = (await getCollection('portfolio')).find((p) => p.slug === slug) as CollectionEntry<'portfolio'>;
+const item = await getEntry('portfolio', slug!);
 if (!item) {
     throw new Error('Case study not found');
 }
 const { title, summary, cover, tags, website } = item.data;
-const { Content } = await item.render();
+const { Content } = await render(item);
 ---
 
 <Layout title={title}>

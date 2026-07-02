@@ -30,7 +30,7 @@ export const GET: APIRoute = async ({ site }) => {
 
     // Blog posts
     const blogUrls = blogPosts.map((post) => ({
-        url: `${baseUrl}/blog/${post.slug}/`,
+        url: `${baseUrl}/blog/${post.id}/`,
         changefreq: 'monthly',
         priority: 0.8,
         lastmod: post.data.updatedDate || post.data.pubDate,
@@ -38,7 +38,7 @@ export const GET: APIRoute = async ({ site }) => {
 
     // Portfolio/work items
     const workUrls = portfolioItems.map((item) => ({
-        url: `${baseUrl}/work/${item.slug}/`,
+        url: `${baseUrl}/work/${item.id}/`,
         changefreq: 'monthly',
         priority: 0.8,
         lastmod: item.data.date,

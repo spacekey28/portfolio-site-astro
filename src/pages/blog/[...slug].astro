@@ -1,27 +1,26 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { formatDate } from '../../utils';
-import { getCollection } from 'astro:content';
-import type { CollectionEntry } from 'astro:content';
+import { getCollection, getEntry, render } from 'astro:content';
 
 export async function getStaticPaths() {
     const posts = await getCollection('blog', ({ data }) => import.meta.env.DEV || !data.draft);
-    return posts.map((post) => ({ params: { slug: post.slug } }));
+    return posts.map((post) => ({ params: { slug: post.id } }));
 }
 
 const { slug } = Astro.params;
-const post = (await getCollection('blog')).find((p) => p.slug === slug) as CollectionEntry<'blog'>;
+const post = await getEntry('blog', slug!);
 if (!post) {
     throw new Error('Post not found');
 }
-const { Content } = await post.render();
+const { Content } = await render(post);
 const { title, description, cover, pubDate, tags, seo } = post.data;
 const pageTitle = seo?.title ?? title;
 const pageDescription = seo?.description ?? description;
 const allPosts = (await getCollection('blog', ({ data }) => import.meta.env.DEV || !data.draft)).sort(
     (a, b) => a.data.pubDate.getTime() - b.data.pubDate.getTime()
 );
-const currentIndex = allPosts.findIndex((p) => p.slug === post.slug);
+const currentIndex = allPosts.findIndex((p) => p.id === post.id);
 const previous = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
 const next = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
 ---
@@ -54,7 +53,7 @@ const next = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : n
     <nav class="mx-auto max-w-3xl px-4 py-6 flex justify-between text-sm">
         {
             previous ? (
-                <a href={`/blog/${previous.slug}/`} class="underline">
+                <a href={`/blog/${previous.id}/`} class="underline">
                     ← {previous.data.title}
                 </a>
             ) : (
@@ -63,7 +62,7 @@ const next = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : n
         }
         {
             next ? (
-                <a href={`/blog/${next.slug}/`} class="underline">
+                <a href={`/blog/${next.id}/`} class="underline">
                     {next.data.title} →
                 </a>
             ) : (

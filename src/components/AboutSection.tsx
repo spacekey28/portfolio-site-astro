@@ -21,7 +21,6 @@ const techStack = [
     'REST APIs',
     'Git',
     'GitHub Actions',
-    'Playwright',
     'Vitest',
 ] as const;
 

@@ -9,8 +9,8 @@ export const GET: APIRoute = async () => {
         const work = await getCollection('portfolio');
         return new Response(
             JSON.stringify({
-                blogSlugs: posts.map((p) => p.slug),
-                portfolioSlugs: work.map((w) => w.slug)
+                blogSlugs: posts.map((p) => p.id),
+                portfolioSlugs: work.map((w) => w.id)
             }),
             { headers: { 'Content-Type': 'application/json' } }
         );

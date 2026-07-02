@@ -29,9 +29,9 @@ const canonical = `${site}/blog/tags/${tag}/`;
                 <p>No posts found.</p>
             ) : (
                 <ul class="space-y-8">
-                    {posts.map(({ slug, data }) => (
+                    {posts.map(({ id, data }) => (
                         <li>
-                            <a href={`/blog/${slug}/`} class="block group">
+                            <a href={`/blog/${id}/`} class="block group">
                                 <h2 class="text-xl font-medium group-hover:underline">{data.title}</h2>
                                 <p class="text-sm opacity-80">{data.description}</p>
                                 <p class="text-xs mt-1">{data.pubDate.toLocaleDateString()}</p>

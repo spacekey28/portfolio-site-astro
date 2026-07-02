@@ -1,4 +1,6 @@
-import { defineCollection, z, reference } from 'astro:content';
+import { defineCollection, reference } from 'astro:content';
+import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
 
 const seo = z.object({
     title: z.string().optional(),
@@ -7,12 +9,12 @@ const seo = z.object({
 });
 
 const blog = defineCollection({
-    type: 'content',
+    loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog' }),
     schema: z.object({
         title: z.string(),
         description: z.string().max(160),
-        pubDate: z.date(),
-        updatedDate: z.date().optional(),
+        pubDate: z.coerce.date(),
+        updatedDate: z.coerce.date().optional(),
         cover: z.string().optional(),
         tags: z.array(z.string()).default([]),
         category: z.enum(['web', 'app', 'notes', 'news']).default('notes'),
@@ -23,25 +25,25 @@ const blog = defineCollection({
 });
 
 const authors = defineCollection({
-    type: 'data',
+    loader: glob({ pattern: '**/*.json', base: './src/content/authors' }),
     schema: z.object({
         name: z.string(),
         avatar: z.string().optional(),
         role: z.string().optional(),
         bio: z.string().optional(),
-        links: z.array(z.object({ label: z.string(), url: z.string().url() })).default([])
+        links: z.array(z.object({ label: z.string(), url: z.url() })).default([])
     })
 });
 
 const portfolio = defineCollection({
-    type: 'content',
+    loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/portfolio' }),
     schema: z.object({
         title: z.string(),
         summary: z.string().max(200),
-        date: z.date(),
+        date: z.coerce.date(),
         client: z.string().optional(),
         role: z.string().optional(),
-        website: z.string().url().optional(),
+        website: z.url().optional(),
         cover: z.string().optional(),
         gallery: z.array(z.string()).default([]),
         tags: z.array(z.string()).default([]),
@@ -50,5 +52,3 @@ const portfolio = defineCollection({
 });
 
 export const collections = { blog, authors, portfolio };
-
-

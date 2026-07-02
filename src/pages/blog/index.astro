@@ -19,10 +19,10 @@ const posts = allPosts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.
 
             <ul class="space-y-12">
                 {
-                    posts.map(({ slug, data }) => (
+                    posts.map(({ id, data }) => (
                         <li class="group">
                             <article class="bg-white rounded-md shadow-lg hover:shadow-xl transition-all duration-300 p-8">
-                                <a href={`/blog/${slug}/`} class="block">
+                                <a href={`/blog/${id}/`} class="block">
                                     <div class="flex flex-col lg:flex-row lg:items-start gap-6">
                                         {data.cover && (
                                             <div class="flex-shrink-0 lg:w-48">
