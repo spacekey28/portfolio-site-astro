@@ -1,47 +1,75 @@
-# Portfolio site based on Astro
+# Portfolio Site
 
-## Astro Commands
+My personal portfolio website built with **Astro** and deployed on
+**Netlify**.
 
-All commands are run from the root of the project, from a terminal:
+The site showcases my work, technical skills, and selected projects,
+with a focus on modern frontend development, performance, and clean user
+experience.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Tech Stack
 
-## Deploying to Netlify
+- Astro
+- TypeScript
+- Tailwind CSS
+- Netlify
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/astro-platform-starter)
+## Features
 
-## Developing Locally
+- Responsive design
+- Fast static site generation
+- Project showcase
+- About & experience sections
+- Contact information
+- SEO-friendly structure
 
-| Prerequisites                                                                |
-| :--------------------------------------------------------------------------- |
-| [Node.js](https://nodejs.org/) v18.14+.                                      |
-| (optional) [nvm](https://github.com/nvm-sh/nvm) for Node version management. |
+## Live Website
 
-1. Clone this repository, then run `npm install` in its root directory.
+**https://sonpeter.com**
 
-2. For the starter to have full functionality locally, please ensure you have an up-to-date version of Netlify CLI. Run:
+## Local Development
 
-```
-npm install netlify-cli@latest -g
-```
-
-3. Link your local repository to the deployed Netlify site. This will ensure you're using the same runtime version for both local development and your deployed site.
-
-```
-netlify link
+```bash
+npm install
+npm run dev
 ```
 
-4. Then, run the Astro.js development server via Netlify CLI:
+Build for production:
 
-```
-netlify dev
+```bash
+npm run build
 ```
 
-If your browser doesn't navigate to the site automatically, visit [localhost:8888](http://localhost:8888).
+Preview the production build:
+
+```bash
+npm run preview
+```
+
+## Project Structure
+
+```text
+src/
+  components/
+  layouts/
+  pages/
+  styles/
+public/
+```
+
+## About
+
+I'm Peter Son, a Frontend Developer based in Auckland, New Zealand.
+
+I build modern web applications using React, Next.js, TypeScript, Astro,
+Tailwind CSS, Sanity, and Supabase. I enjoy creating clean,
+maintainable, and user-friendly digital experiences with a strong focus
+on performance, accessibility, and code quality.
+
+This portfolio serves as a central place to showcase my projects,
+technical skills, and ongoing work.
+
+## License
+
+This project is available for reference and portfolio purposes only.
+Please do not copy or redistribute the content without permission.
