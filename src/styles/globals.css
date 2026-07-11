@@ -45,12 +45,60 @@
 
 @layer components {
     .markdown {
-        > * {
+        @apply text-navy leading-relaxed;
+
+        :where(p) {
+            @apply mb-5 text-base/relaxed;
+        }
+
+        :where(h2) {
+            @apply mt-10 mb-4 scroll-mt-28;
+            font-family: var(--font-heading);
+        }
+
+        :where(h3) {
+            @apply mt-8 mb-3 scroll-mt-28;
+            font-family: var(--font-heading);
+        }
+
+        :where(ul, ol) {
+            @apply mb-5 space-y-2 pl-5;
+        }
+
+        :where(ul) {
+            @apply list-disc;
+        }
+
+        :where(ol) {
+            @apply list-decimal;
+        }
+
+        :where(li) {
+            @apply leading-relaxed;
+        }
+
+        :where(blockquote) {
+            @apply my-6 border-l-4 border-sky/70 py-1 pl-4 italic text-navy/90;
+        }
+
+        :where(blockquote p) {
+            @apply mb-0;
+        }
+
+        :where(pre) {
             @apply my-6;
         }
 
-        :where(h1, h2) {
-            @apply mt-12 mb-6;
+        :where(a) {
+            @apply text-sky underline underline-offset-2;
+        }
+
+        :where(strong) {
+            @apply font-semibold;
+        }
+
+        :where(hr) {
+            @apply my-10 border-sky/20;
         }
 
         > :first-child {
@@ -59,6 +107,10 @@
 
         > :last-child {
             @apply mb-0;
+        }
+
+        :where(br + br) {
+            display: none;
         }
     }
 

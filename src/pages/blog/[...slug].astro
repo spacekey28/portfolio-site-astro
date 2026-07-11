@@ -26,13 +26,15 @@ const next = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : n
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
-    <article class="prose prose-invert mx-auto max-w-3xl px-4 py-10">
-        <header class="mb-6">
-            <h1 class="mb-2">{title}</h1>
-            <p class="text-sm opacity-80">{formatDate(pubDate)}</p>
+    <article class="mx-auto max-w-3xl px-4 py-10">
+        <header class="mb-8">
+            <h1 class="mb-3 text-navy">{title}</h1>
+            <p class="text-sm text-navy/70">{formatDate(pubDate)}</p>
         </header>
-        {cover && <img src={cover} alt={title} loading="lazy" class="rounded-md mb-6" />}
-        <Content />
+        {cover && <img src={cover} alt={title} loading="lazy" class="mb-8 rounded-md" />}
+        <div class="markdown">
+            <Content />
+        </div>
         {
             tags?.length ? (
                 <ul class="mt-8 flex flex-wrap gap-2 text-xs">
@@ -40,7 +42,7 @@ const next = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : n
                         <li>
                             <a
                                 href={`/blog/tags/${t}/`}
-                                class="px-2 py-1 rounded-full bg-white/10 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/60"
+                                class="rounded-full bg-sky/10 px-2 py-1 text-sky hover:bg-sky/20 focus:outline-none focus:ring-2 focus:ring-sky/40"
                             >
                                 #{t}
                             </a>
