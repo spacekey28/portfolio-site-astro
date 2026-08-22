@@ -3,7 +3,7 @@ title: 'How I think about maintainable CSS'
 description: 'Learn how I approach maintainable CSS so your website stays fast, consistent, and easier to update over time.'
 pubDate: 2026-01-03
 updatedDate: 2026-01-03
-cover: '/images/blog/how-i-think-about-maintainable-css.jpg'
+cover: '/images/blog/how-i-think-about-maintainable-css.png'
 tags: ['design', 'development']
 category: 'web'
 draft: false
